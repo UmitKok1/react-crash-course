@@ -1,12 +1,25 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { useState } from 'react';
 import PostsList from './components/PostsList';
+import MainHeader from './components/MainHeader';
 import './main.css'
 function App() {
-  return <main>
-    <PostsList/>
-  </main>;
+
+  const [modalIsVisible, setModalIsVisible] = useState(true);
+
+  function showModalHandler() {
+    setModalIsVisible(true);
+  }
+  function hideModalHandler() {
+    setModalIsVisible(false);
+  }
+  return (
+    <>
+      <MainHeader onCreatePost={showModalHandler}/>
+      <main>
+        <PostsList isPosting={modalIsVisible} onStopPosting={hideModalHandler} />
+      </main>
+    </>
+  );
 }
 
 export default App;

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import NewPost from "./NewPost";
 import Post from "./Post";
-import classes from './PostsList.module.css';
 import Modal from './Modal';
+import classes from './PostsList.module.css';
 
 function PostsList({ isPosting, onStopPosting }) {
     const [enteredBody, setEnteredBody] = useState('');
@@ -23,6 +23,7 @@ function PostsList({ isPosting, onStopPosting }) {
                     <NewPost
                         onBodyChange={bodyChangeHandler}
                         onAuthorChange={authorChangeHandler}
+                        onCancel={onStopPosting}
                     />
                 </Modal>
             )}

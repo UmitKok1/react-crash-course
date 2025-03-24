@@ -3,8 +3,6 @@ import PostsList from '../components/PostsList';
 import '../main.css'
 function Posts() {
 
-  const [modalIsVisible, setModalIsVisible] = useState(true);
-
   return (
     <>
       <Outlet/>

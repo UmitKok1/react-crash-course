@@ -7,12 +7,18 @@ import RootLayout from './Routes/RootLayout.jsx';
 
 const router = createBrowserRouter([
   { 
-    path: '/', element: <RootLayout />, 
-    children:[
-    { path: '/', element: <Posts /> },
-    { path: '/crated-posts', element: <NewPost /> },
-  ] },
-
+    path: '/', 
+    element: <RootLayout />, 
+    children: [
+      { 
+        path: '', 
+        element: <Posts />, 
+        children: [
+          { path: 'created-posts', element: <NewPost /> }
+        ]
+      },
+    ],
+  },
 ]);
 
 createRoot(document.getElementById('root')).render(

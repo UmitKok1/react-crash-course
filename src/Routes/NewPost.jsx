@@ -1,6 +1,6 @@
 import classes from './NewPost.module.css';
 import Modal from '../components/Modal';
-import { Link, Form, redirect} from 'react-router-dom';
+import { Link, Form, redirect } from 'react-router-dom';
 
 function NewPost() {
 
@@ -28,7 +28,7 @@ function NewPost() {
 export default NewPost;
 
 export async function action({ request }) {
-    const formData = await request.formData(); 
+    const formData = await request.formData();
     const postData = Object.fromEntries(formData);
     await fetch('http://localhost:8080/posts', {
         method: 'POST', // Büyük harfle "POST"
